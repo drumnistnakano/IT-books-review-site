@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #004400;
+    color: #fff;
+}
+.navbar-logo {
+    height: 60px;
+    margin-right: 15px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+.main {
+    background-color: #222222;
+    min-height: 85vh;
+    padding: 30px 5%;
+}
+.pagetitle {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer {
+    background-color: #004400;
+    text-align: center;
+}
+.copyright {
+    color: #fff;
+}

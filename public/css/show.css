@@ -1,0 +1,13 @@
+.review-main {
+    width: 70%;
+}
+.review-image {
+    width: 30%;
+}
+.review-image img {
+    max-width: 100%;
+}
+.btn-back {
+    width: 10em;
+    margin: auto;
+}

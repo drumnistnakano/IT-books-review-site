@@ -1,0 +1,169 @@
+.mt0 {
+    margin-top: 0 !important;
+}
+.mt5 {
+    margin-top: 5px !important;
+}
+.mt10 {
+    margin-top: 10px !important;
+}
+.mt15 {
+    margin-top: 15px !important;
+}
+.mt20 {
+    margin-top: 20px !important;
+}
+.mt30 {
+    margin-top: 30px !important;
+}
+.mt40 {
+    margin-top: 40px !important;
+}
+.mt50 {
+    margin-top: 50px !important;
+}
+.mt60 {
+    margin-top: 60px !important;
+}
+
+.mr0 {
+    margin-right: 0 !important;
+}
+.mr10 {
+    margin-right: 10px !important;
+}
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
+}
+.mb5 {
+    margin-bottom: 5px !important;
+}
+.mb10 {
+    margin-bottom: 10px !important;
+}
+.mb15 {
+    margin-bottom: 15px !important;
+}
+.mb20 {
+    margin-bottom: 20px !important;
+}
+.mb30 {
+    margin-bottom: 30px !important;
+}
+.mb40 {
+    margin-bottom: 40px !important;
+}
+.mb50 {
+    margin-bottom: 50px !important;
+}
+.mb60 {
+    margin-bottom: 60px !important;
+}
+.mb70 {
+    margin-bottom: 70px !important;
+}
+.mb80 {
+    margin-bottom: 80px !important;
+}
+.mb90 {
+    margin-bottom: 90px !important;
+}
+.mb100 {
+    margin-bottom: 100px !important;
+}
+
+.ml0 {
+    margin-left: 0 !important;
+}
+.ml10 {
+    margin-left: 10px !important;
+}
+.ml20 {
+    margin-left: 20px !important;
+}
+
+.mrl1 {
+    margin-right: 1% !important;
+    margin-left: 1% !important;
+}
+.mrl2 {
+    margin-right: 2% !important;
+    margin-left: 2% !important;
+}
+
+.mauto {
+    margin: auto;
+}
+
+/* padding */
+.p0 {
+    padding: 0 !important;
+}
+.p5 {
+    padding: 5px !important;
+}
+.p10 {
+    padding: 10px !important;
+}
+.p20 {
+    padding: 20px !important;
+}
+.pt0 {
+    padding-top: 0 !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pb0 {
+    padding-bottom: 0 !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pb40 {
+    padding-bottom: 40px !important;
+}
+
+.pl10 {
+    padding-left: 10px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+
+.prl1 {
+    padding-right: 1% !important;
+    padding-left: 1% !important;
+}
+.prl2 {
+    padding-right: 2% !important;
+    padding-left: 2% !important;
+}
+.prl3 {
+    padding-right: 3% !important;
+    padding-left: 3% !important;
+}
+.prl4 {
+    padding-right: 4% !important;
+    padding-left: 4% !important;
+}
+.prl5 {
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+}
