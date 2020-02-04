@@ -8,14 +8,15 @@ https://it-books-review-site.work/
 
 # 使用技術
 * PHP 7.3
-* Laravel6
+* Laravel 6.0
+* nginx
 * MySQL 5.7
 * Bootstrap
 * Github
 * AWS(VPC,EC2,ELB,RDS,Route53,ACM,Cloud9)
 
 # AWS構成図
-作成中
+![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
 
 # 機能一覧
 * ユーザー登録、ログイン機能
