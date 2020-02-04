@@ -2,7 +2,7 @@
 読んだIT技術書のレビュー投稿、読んだ後にいいねができるサイトです。
 
 # リンク
-作成中
+https://it-books-review-site.work/
 
 ユーザ登録すると、技術書のレビューを投稿できます。
 
@@ -12,7 +12,7 @@
 * MySQL 5.7
 * Bootstrap
 * Github
-* AWS(VPC,EC2,ALB,RDS,S3,Route53,ACM,Cloud9)
+* AWS(VPC,EC2,ELB,RDS,Route53,ACM,Cloud9)
 
 # AWS構成図
 作成中
@@ -21,5 +21,7 @@
 * ユーザー登録、ログイン機能
 * 画像アップロード機能
 * 登録されているレビュー一覧の表示機能
-* いいね機能
 * 一覧表示のページネーション機能
+
+（現在、実装中）
+* いいね機能
