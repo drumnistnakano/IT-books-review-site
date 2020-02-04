@@ -1,10 +1,12 @@
 # IT技術書レビューサイト
-読んだIT技術書のレビュー投稿、読んだ後にいいねができるサイトです。
+あなたが読んだIT関連の技術書のレビュー投稿したり、読んだ後にいいねができるサイトです。
+
+![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
 
 # リンク
 https://it-books-review-site.work/
 
-ユーザ登録すると、技術書のレビューを投稿できます。
+ユーザ登録すると、だれでも技術書の紹介やレビューを投稿できます。
 
 # 使用技術
 * PHP 7.3
