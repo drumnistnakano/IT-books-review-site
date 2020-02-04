@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #004400;
+    background-color: #778899;
     color: #fff;
 }
 .navbar-logo {
@@ -10,16 +10,17 @@
     color: #fff;
 }
 .main {
-    background-color: #222222;
     min-height: 85vh;
     padding: 30px 5%;
+    background: url("/images/photo-1507842217343-583bb7270b66.jpeg");
+    
 }
 .pagetitle {
     color: #fff;
     margin-bottom: 20px;
 }
 .footer {
-    background-color: #004400;
+    background-color: #778899;
     text-align: center;
 }
 .copyright {
