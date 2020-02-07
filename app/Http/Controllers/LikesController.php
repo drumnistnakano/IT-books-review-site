@@ -11,7 +11,7 @@ use App\Like;
 
 class LikesController extends Controller
 {
-    public function store(Request $request, $reviewId)
+    public function apply(Request $request, $reviewId)
     {
         Like::create(
           array(
@@ -26,7 +26,7 @@ class LikesController extends Controller
              ->action('ReviewController@show', $review->id);
     }
 
-    public function destroy($reviewId, $likeId) {
+    public function clear($reviewId, $likeId) {
       $review = Review::findOrFail($reviewId);
       $review->like_by()->findOrFail($likeId)->delete();
 

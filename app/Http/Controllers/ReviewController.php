@@ -52,4 +52,11 @@ class ReviewController extends Controller
         $like = $review->likes()->where('user_id', Auth::user()->id)->first();
         return view('show', compact('review', 'like'));
     }
+    
+    public function remove(Request $request)
+    {
+        $review = Article::find($request->id);
+        $review->delete();
+        return redirect('/');
+    }
 }

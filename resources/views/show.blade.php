@@ -26,20 +26,22 @@
     @if (Auth::check())
       @if ($like)
         <!-- いいね取り消しフォーム -->
-        {{ Form::model($review, array('action' => array('LikesController@destroy', $review->id, $like->id))) }}
+        {{ Form::model($review, array('action' => array('LikesController@clear', $review->id, $like->id))) }}
           <button type="submit">
             ♡ いいね {{ $review->likes_count }}
           </button>
         {!! Form::close() !!}
       @else
         <!-- いいねフォーム -->
-        {{ Form::model($review, array('action' => array('LikesController@store', $review->id))) }}
+        {{ Form::model($review, array('action' => array('LikesController@apply', $review->id))) }}
           <button type="submit">
             + いいね {{ $review->likes_count }}
           </button>
         {!! Form::close() !!}
       @endif
     @endif
+    <a href="#" class='btn btn-info btn-back mb20'>編集</a>
+    <a href="#" class='btn btn-info btn-back mb20'>削除</a>
     <a href="{{ route('index') }}" class='btn btn-info btn-back mb20'>戻る</a>
   </div>
 </div>

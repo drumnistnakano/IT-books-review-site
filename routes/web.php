@@ -24,11 +24,16 @@ Route::group(['middleware' => 'auth'], function () {
     // 投稿機能
     Route::get('/review', 'ReviewController@create')->name('create');
     Route::post('/review/save', 'ReviewController@save')->name('save');
+    // 削除機能
+    Route::post('/review/remove', 'ReviewController@remove');
+    // 更新機能
+    
     // いいね機能
-    Route::post('/show/{review}/likes/{like}', 'LikesController@destroy');
-    Route::post('/show/{review}/likes', 'LikesController@store');
+    Route::post('/show/{review}/likes/{like}', 'LikesController@clear');
+    Route::post('/show/{review}/likes', 'LikesController@apply');
     // 詳細画面
     Route::get('/show/{id}', 'ReviewController@show')->name('show');
+    
 });
 
 
