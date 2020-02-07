@@ -19,7 +19,9 @@
                 <p class='description'>
                     {{ $review->body }}
                 </p>
+                @if(Auth::user())
                 <a href="{{ route('show', ['id' => $review->id ]) }}" class='btn btn-secondary detail-btn'>詳細</a>
+                @endif
             </div>
         </div>
     </div>

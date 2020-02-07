@@ -27,7 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
     // いいね機能
     Route::post('/show/{review}/likes/{like}', 'LikesController@destroy');
     Route::post('/show/{review}/likes', 'LikesController@store');
+    // 詳細画面
+    Route::get('/show/{id}', 'ReviewController@show')->name('show');
 });
 
-// 詳細画面
-Route::get('/show/{id}', 'ReviewController@show')->name('show');
+
