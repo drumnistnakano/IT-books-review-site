@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -48,6 +49,7 @@ class ReviewController extends Controller
     public function show($id)
     {
         $review = Review::where('id', $id)->where('status', 1)->first();
-        return view('show', compact('review'));
+        $like = $review->likes()->where('user_id', Auth::user()->id)->first();
+        return view('show', compact('review', 'like'));
     }
 }

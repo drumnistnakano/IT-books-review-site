@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2329a24ebbddae0d989f382a39978c33",
+    "content-hash": "c21e3c5bb98a2e583a440adcd57ca7d6",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -423,6 +423,39 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
+            "name": "kanazaca/counter-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kanazaca/counter-cache.git",
+                "reference": "78212cbddd444546a4647c10242dea5131a02767"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kanazaca/counter-cache/zipball/78212cbddd444546a4647c10242dea5131a02767",
+                "reference": "78212cbddd444546a4647c10242dea5131a02767",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kanazaca\\CounterCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hugo Neto",
+                    "email": "hugo.neto@grandesplanos.com"
+                }
+            ],
+            "description": "Package for Laravel to implement counter cache",
+            "time": "2016-05-25T01:35:59+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v6.13.1",
             "source": {
@@ -688,6 +721,74 @@
                 "ui"
             ],
             "time": "2019-12-20T15:09:01+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v6.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "bcc317d21a7e04eebcc81c4109fa84feaab63590"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/bcc317d21a7e04eebcc81c4109fa84feaab63590",
+                "reference": "bcc317d21a7e04eebcc81c4109fa84feaab63590",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0",
+                "illuminate/routing": "^6.0",
+                "illuminate/session": "^6.0",
+                "illuminate/support": "^6.0",
+                "illuminate/view": "^6.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.0",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "time": "2019-10-02T00:37:39+00:00"
         },
         {
             "name": "league/commonmark",
