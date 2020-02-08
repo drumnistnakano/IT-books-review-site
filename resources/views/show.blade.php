@@ -41,7 +41,9 @@
       @endif
     @endif
     <a href="#" class='btn btn-info btn-back mb20'>編集</a>
-    <a href="#" class='btn btn-info btn-back mb20'>削除</a>
+    {{ Form::open(['url' => route('remove', [$review->id]), 'method'=>'POST']) }}
+    {{ Form::submit('削除',['class' => 'btn btn-info btn-back mb20']) }}
+    {{ Form::close() }}
     <a href="{{ route('index') }}" class='btn btn-info btn-back mb20'>戻る</a>
   </div>
 </div>

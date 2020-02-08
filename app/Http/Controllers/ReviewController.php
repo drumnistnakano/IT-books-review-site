@@ -53,9 +53,9 @@ class ReviewController extends Controller
         return view('show', compact('review', 'like'));
     }
     
-    public function remove(Request $request)
+    public function remove($id)
     {
-        $review = Article::find($request->id);
+        $review = Review::find($id);
         $review->delete();
         return redirect('/');
     }
