@@ -12,4 +12,6 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
 <link href="{{ asset('css/utility.css') }}" rel="stylesheet">
+<!-- Icons -->
+<script src="https://kit.fontawesome.com/4a598befe6.js" crossorigin="anonymous"></script>
 @yield('css')

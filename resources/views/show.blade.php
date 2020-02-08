@@ -27,16 +27,24 @@
       @if ($like)
         <!-- いいね取り消しフォーム -->
         {{ Form::model($review, array('action' => array('LikesController@clear', $review->id, $like->id))) }}
-          <button type="submit">
-            ♡ いいね {{ $review->likes_count }}
+          <button type="submit" class="btn btn-outline-danger rounded-pill">
+            いいね 
+            <i class="fas fa-heart"></i>
           </button>
+          <div class="balloon">    
+            <span class="number">{{ $review->likes_count }}</span>    
+          </div>
         {!! Form::close() !!}
       @else
         <!-- いいねフォーム -->
         {{ Form::model($review, array('action' => array('LikesController@apply', $review->id))) }}
-          <button type="submit">
-            + いいね {{ $review->likes_count }}
+          <button type="submit" class="btn page-link text-dark d-inline-block rounded-pill">
+            いいね
+            <i class="far fa-heart"></i>
           </button>
+          <div class="balloon">    
+            <span class="number">{{ $review->likes_count }}</span>    
+          </div>
         {!! Form::close() !!}
       @endif
     @endif

@@ -11,3 +11,43 @@
     width: 10em;
     margin: auto;
 }
+
+/*吹き出し*/
+.balloon    {
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:5px;
+    }
+ 
+.balloon span.number    {
+    color:#777; 
+    font-size:90%;
+    line-height:2em;
+    padding:5px 10px;
+ 
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius:4px;
+    }
+ 
+.balloon span.number:after,
+.balloon span.number:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    position: absolute;
+    }
+ 
+.balloon span.number:after  {
+    border-right-color: #fff;
+    border-width: 4px;
+    margin-top: -4px
+    }
+ 
+.balloon span.number:before {
+    border-right-color: #ccc;
+    border-width: 5px;
+    margin-top: -5px;
+    }
