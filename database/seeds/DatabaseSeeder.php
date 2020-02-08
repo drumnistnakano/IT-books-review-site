@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // Note : シーディングファイルを作成する度に追記
+        $this->call([
+            UsersTableSeeder::class,
+            CategoriesTableSeeder::class,
+            ReviewsTableSeeder::class,
+        ]);
     }
 }
