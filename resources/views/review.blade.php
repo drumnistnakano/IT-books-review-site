@@ -22,6 +22,15 @@
                 <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
               </div>
               <div class="form-group">
+                <select name="category_id">
+                    @foreach($category as $category_id => $category_name)
+                    <option value="{{ $category_id }}" @if($category_id == old('category_id')) selected @endif>
+                        {{ $category_name }}
+                    </option>
+                    @endforeach
+                </select>
+              </div>
+              <div class="form-group">
               <label>レビュー本文</label>
                 <textarea class='description form-control' name='body' placeholder='本文を入力'></textarea>
               </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Category;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
@@ -14,30 +15,38 @@ class ReviewController extends Controller
     }
     
     public function create(){
-        return view('review');
+        $category = Category::orderBy('id', 'asc')->pluck('name', 'id');
+        return view('review', compact('category'));
     }
     
+    // TODO : バリデーションの切り出し
     public function save(Request $request){
         $r = $request->all();
+        // バリデーション
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
             'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        // 画像添付有
         if ($request->hasFile('image')) {
             $request->file('image')->store('/public/images');
             $data = [
                 'user_id' => \Auth::id(), 
                 'title' => $r['title'], 
+                'category_id' => $r['category_id'],
                 'body' => $r['body'], 
                 // 保存する画像名をハッシュで変換
                 'image' => $request->file('image')->hashName()
             ];
-        } else {
+        }
+        // 画像添付無
+        else {
             $data = [
                 'user_id' => \Auth::id(), 
                 'title' => $r['title'], 
+                'category_id' => $r['category_id'],
                 'body' => $r['body']
             ];
         }
@@ -63,10 +72,20 @@ class ReviewController extends Controller
     public function edit($id)
     {
         $review= Review::findOrFail($id);
-        return view('edit', compact('review'));
+        $category = Category::orderBy('id', 'asc')->pluck('name', 'id');
+        $select_category = Category::where('id', $review->category_id)->first();
+        return view('edit', compact('review', 'category', 'select_category'));
     }
     
+    // TODO : バリデーションの切り出し
     public function update(Request $request, $id){
+        // バリデーション
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        
         $review = Review::findOrFail($id);
         $review->category_id = $request->category_id;
         $review->title = $request->title;
