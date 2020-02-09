@@ -27,7 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
     // 削除機能
     Route::post('/review/remove/{id}', 'ReviewController@remove')->name('remove');
     // 更新機能
-    
+    Route::get('/review/edit/{id}', 'ReviewController@edit')->name('edit');
+    Route::post('/review/edit/{id}', 'ReviewController@update')->name('update');
     // いいね機能
     Route::post('/show/{review}/likes/{like}', 'LikesController@clear');
     Route::post('/show/{review}/likes', 'LikesController@apply');

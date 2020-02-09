@@ -48,10 +48,15 @@
         {!! Form::close() !!}
       @endif
     @endif
-    <a href="#" class='btn btn-info btn-back mb20'>編集</a>
-    {{ Form::open(['url' => route('remove', [$review->id]), 'method'=>'POST']) }}
-    {{ Form::submit('削除',['class' => 'btn btn-info btn-back mb20']) }}
-    {{ Form::close() }}
+    @if(Auth::user()->id == $review->user_id)
+      <!--<a href="#" class='btn btn-info btn-back mb20'>編集</a>-->
+      {{ Form::open(['url' => route('edit', [$review->id]), 'method'=>'GET']) }}
+      {{ Form::submit('編集',['class' => 'btn btn-info btn-back mb20']) }}
+      {{ Form::close() }}
+      {{ Form::open(['url' => route('remove', [$review->id]), 'method'=>'POST']) }}
+      {{ Form::submit('削除',['class' => 'btn btn-info btn-back mb20']) }}
+      {{ Form::close() }}
+    @endif
     <a href="{{ route('index') }}" class='btn btn-info btn-back mb20'>戻る</a>
   </div>
 </div>

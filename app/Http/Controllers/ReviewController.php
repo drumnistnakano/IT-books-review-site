@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class ReviewController extends Controller
 {
     public function index(){
-        // 作成日時降順でレビューを取得
         $reviews = Review::where('status', 1)->orderBy('created_at', 'DESC')->paginate(6);
         return view('index', compact('reviews'));
     }
@@ -32,7 +31,8 @@ class ReviewController extends Controller
                 'user_id' => \Auth::id(), 
                 'title' => $r['title'], 
                 'body' => $r['body'], 
-                'image' => $request->file('image')->hashName() // 保存する画像名をハッシュで変換
+                // 保存する画像名をハッシュで変換
+                'image' => $request->file('image')->hashName()
             ];
         } else {
             $data = [
@@ -58,5 +58,22 @@ class ReviewController extends Controller
         $review = Review::find($id);
         $review->delete();
         return redirect('/');
+    }
+    
+    public function edit($id)
+    {
+        $review= Review::findOrFail($id);
+        return view('edit', compact('review'));
+    }
+    
+    public function update(Request $request, $id){
+        $review = Review::findOrFail($id);
+        $review->category_id = $request->category_id;
+        $review->title = $request->title;
+        $review->body = $request->body;
+        $review->save();      
+        
+        return redirect()
+             ->action('ReviewController@show', $review->id);
     }
 }

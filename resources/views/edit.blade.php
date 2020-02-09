@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+    <link href="{{ asset('css/show.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
-<h1 class='pagetitle'>レビュー投稿</h1>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -35,4 +38,6 @@
       </form>
     </div>
 </div>
+
+
 @endsection
