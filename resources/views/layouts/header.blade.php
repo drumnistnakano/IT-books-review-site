@@ -17,7 +17,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     <li class="nav-item">
-                        <a href="{{ route('create') }}" class='nav-link'>新規登録</a>
+                        <a href="{{ route('create') }}" class='nav-link'>レビュー投稿</a>
                     </li>
                         
                 @guest
