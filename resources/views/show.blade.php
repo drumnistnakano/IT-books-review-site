@@ -58,6 +58,48 @@
       {{ Form::close() }}
     @endif
     <a href="{{ route('index') }}" class='btn btn-info btn-back mb20'>戻る</a>
+
+    <!-- コメント投稿 -->
+    <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
+      @csrf
+      <input name="review_id" type="hidden" value="{{ $review->id }}">
+      <div class="form-group">
+        <label for="body">コメント</label>
+        <textarea id="body" name="body" class="form-control {{ $errors->has('body') ? 'is-invalid' : '' }}" rows="4">
+          {{ old('body') }}
+        </textarea>
+        @if ($errors->has('body'))
+            <div class="invalid-feedback">
+                {{ $errors->first('body') }}
+            </div>
+        @endif
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">
+            コメントする
+        </button>
+      </div>
+    </form>
+
+    <!-- コメント一覧 -->
+    <section>
+      <hr />
+      <h2 class="h5 mb-4">コメント一覧</h2>
+
+      @forelse($review->comments as $comment)
+        <div class="border-top p-4">
+          <time class="text-secondary">
+            {{ $comment->created_at->format('Y.m.d H:i') }}
+          </time>
+          <p class="mt-2">
+            {!! nl2br(e($comment->body)) !!}
+          </p>
+        </div>
+      @empty
+        <p>コメントはまだありません。</p>
+      @endforelse
+    </section>
   </div>
 </div>
 
