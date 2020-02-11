@@ -8,6 +8,14 @@
 <div class="container">
   <h1 class='pagetitle'>レビュー詳細</h1>
   <div class="card">
+    <div class="border-top p-1">
+      <time class="text-secondary">
+        最終更新日時：{{ $review->updated_at->format('Y.m.d H:i') }}
+      </time>
+      <spen>
+        　投稿者：{{ $review->user->name }}
+      </spen>
+    </div>
     <div class="card-body d-flex">
       <section class='review-main'>
         <h2 class='h4'>カテゴリ</h2>
@@ -116,10 +124,10 @@
       @forelse($review->comments as $comment)
         <div class="border-top p-4">
           <time class="text-secondary">
-            {{ $comment->created_at->format('Y.m.d H:i') }}
+            コメント投稿日時：{{ $comment->created_at->format('Y.m.d H:i') }}
           </time>
           <spen>
-            {{ $comment->user->name }}
+            　コメント投稿者：{{ $comment->user->name }}
           </spen>
           <p class="mt-2">
             {!! nl2br(e($comment->body)) !!}
