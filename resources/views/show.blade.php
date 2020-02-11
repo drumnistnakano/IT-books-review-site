@@ -63,6 +63,7 @@
     </div>
 
     <!-- コメント表示・非表示ボタン -->
+    @if(Auth::user()->id == $review->user_id)
     <form action="{{ action('CommentsController@canComment', $review->id)}}" method="POST" name="display">
     @csrf
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -74,6 +75,7 @@
       </label>
     </div>
     </form>
+    @endif
 
     <!-- 表示フラグ(1:表示, 0:非表示)によってコメント欄のの表示が切り替わる -->
     @if($review->display_comments === 1)
