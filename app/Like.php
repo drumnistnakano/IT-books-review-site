@@ -19,12 +19,12 @@ class Like extends Model
 
     protected $fillable = ['user_id', 'review_id'];
 
-    public function reviews()
+    public function review()
     {
       return $this->belongsTo('\App\Review');
     }
 
-    public function users()
+    public function user()
     {
       return $this->belongsTo(User::class);
     }

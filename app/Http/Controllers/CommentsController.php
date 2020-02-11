@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use Auth;
 
 class CommentsController extends Controller
 {
@@ -12,6 +13,7 @@ class CommentsController extends Controller
         $params = $request->validate([
             'review_id' => 'required|exists:reviews,id',
             'body' => 'required|max:2000',
+            'user_id' =>'required|exists:users,id'
         ]);
 
         $review = Review::findOrFail($params['review_id']);

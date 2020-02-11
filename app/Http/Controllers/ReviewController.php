@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 use App\Category;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
@@ -57,9 +58,11 @@ class ReviewController extends Controller
     
     public function show($id)
     {
+        $loginuser = \Auth::user();
+
         $review = Review::where('id', $id)->where('status', 1)->first();
-        $like = $review->likes()->where('user_id', Auth::user()->id)->first();
-        return view('show', compact('review', 'like'));
+        $like = $review->likes()->where('user_id', $loginuser->id)->first();
+        return view('show', compact('review', 'like', 'loginuser'));
     }
     
     public function remove($id)
@@ -90,7 +93,7 @@ class ReviewController extends Controller
         $review->category_id = $request->category_id;
         $review->title = $request->title;
         $review->body = $request->body;
-        $review->save();      
+        $review->save();
         
         return redirect()
              ->action('ReviewController@show', $review->id);

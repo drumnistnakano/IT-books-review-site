@@ -12,6 +12,11 @@
     margin: auto;
 }
 
+.btn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 /*吹き出し*/
 .balloon    {
     display:inline-block;
