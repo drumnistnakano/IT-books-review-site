@@ -10,6 +10,9 @@
     <div class="col-md-4">
         <div class="card mb50">
             <div class="card-body">
+                <div class="btn mb20" style="background-color:{{ $review->category->color }}">
+                 {{ $review->category->name }}
+                </div>
                 @if(!empty($review->image))
                 <div class='image-wrapper'><img class='book-image' src="{{ asset('storage/images/'.$review->image) }}"></div>
                 @else

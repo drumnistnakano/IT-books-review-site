@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\Like;
+use App\Category;
 
 class Review extends Model
 {
@@ -13,6 +14,11 @@ class Review extends Model
     public function user()
     {
       return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+      return $this->belongsTo('App\Category');
     }
 
     public function likes()

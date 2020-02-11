@@ -10,6 +10,10 @@
   <div class="card">
     <div class="card-body d-flex">
       <section class='review-main'>
+        <h2 class='h4'>カテゴリ</h2>
+        <div class="btn mb20" style="background-color:{{ $review->category->color }}">
+          {{ $review->category->name }}
+        </div>
         <h2 class='h4'>タイトル</h2>
         <p class='h5 mb20'>{{ $review->title }}</p>
         <h2 class='h4'>レビュー内容</h2>
