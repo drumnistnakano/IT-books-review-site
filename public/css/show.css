@@ -22,7 +22,7 @@
     display:inline-block;
     vertical-align:middle;
     margin-left:5px;
-    }
+}
  
 .balloon span.number    {
     color:#777; 
@@ -34,7 +34,7 @@
     background: #fff;
     border: 1px solid #ccc;
     border-radius:4px;
-    }
+}
  
 .balloon span.number:after,
 .balloon span.number:before {
@@ -43,16 +43,16 @@
     border: solid transparent;
     content: "";
     position: absolute;
-    }
+}
  
 .balloon span.number:after  {
     border-right-color: #fff;
     border-width: 4px;
     margin-top: -4px
-    }
+}
  
 .balloon span.number:before {
     border-right-color: #ccc;
     border-width: 5px;
     margin-top: -5px;
-    }
+}

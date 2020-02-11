@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/show/{review}/likes', 'LikesController@apply');
     // コメント投稿
     Route::post('/comment', 'CommentsController@store')->name('comments.store');
+    Route::post('/comment/{id}/flag', 'CommentsController@canComment');
     // 詳細画面
     Route::get('/show/{id}', 'ReviewController@show')->name('show');
     

@@ -7,7 +7,7 @@ use Auth;
 
 class Comment extends Model
 {
-    protected $fillable = ['body', 'user_id', 'review_id'];
+    protected $fillable = ['body', 'user_id', 'review_id', 'display_comments'];
     
     public function review()
     {

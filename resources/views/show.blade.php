@@ -62,6 +62,22 @@
     <a href="{{ route('index') }}" class='btn btn-info mb20'>戻る</a>
     </div>
 
+    <!-- コメント表示・非表示ボタン -->
+    <form action="{{ action('CommentsController@canComment', $review->id)}}" method="POST" name="display">
+    @csrf
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-outline-secondary  active">
+        <input type="radio" name="display_comments" id="option1" value="1" autocomplete="off" checked> 表示
+      </label>
+      <label class="btn btn-outline-secondary">
+        <input type="radio" name="display_comments" id="option2" value="0" autocomplete="off"> 非表示
+      </label>
+    </div>
+    </form>
+
+    <!-- 表示フラグ(1:表示, 0:非表示)によってコメント欄のの表示が切り替わる -->
+    @if($review->display_comments === 1)
+
     <!-- コメント投稿 -->
     <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
       @csrf
@@ -107,7 +123,21 @@
         <p>コメントはまだありません。</p>
       @endforelse
     </section>
+    @endif
   </div>
 </div>
 
 @endsection
+
+<!-- TODO : jsファイルに切り出し -->
+<script type="text/javascript" language="javascript">
+  window.onload = function() {
+    var btn = document.getElementsByName('display_comments');
+    btn.forEach(function(e) {
+        e.addEventListener("click", function() {
+            document.display.submit();
+        });
+    });
+  };
+
+</script>

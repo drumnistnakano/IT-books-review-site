@@ -24,6 +24,7 @@ class CreateReviewsTable extends Migration
             $table->string('image')->nullable(); 
             $table->tinyInteger('status')->default(1)->comment('0=下書き, 1=アクティブ, 2=削除済み');
             $table->integer('likes_count')->default(0);
+            $table->unsignedTinyInteger('display_comments')->default(1);
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

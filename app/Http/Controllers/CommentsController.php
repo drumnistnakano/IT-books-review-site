@@ -22,4 +22,13 @@ class CommentsController extends Controller
         return redirect()
              ->action('ReviewController@show', $review->id);
     }
+
+    public function canComment(Request $request, $id){
+        $review = Review::findOrFail($id);
+        $review->display_comments = $request->display_comments;
+        $review->save();
+
+        return redirect()
+             ->action('ReviewController@show', $review->id);
+    }
 }
