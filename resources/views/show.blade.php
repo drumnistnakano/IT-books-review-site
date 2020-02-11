@@ -68,10 +68,10 @@
     @csrf
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-outline-secondary  active">
-        <input type="radio" name="display_comments" id="option1" value="1" autocomplete="off" checked> 表示
+        <input type="radio" name="display_comments" id="option1" value="1" autocomplete="off" @if($review->display_comments === 1) checked @endif> コメント表示
       </label>
       <label class="btn btn-outline-secondary">
-        <input type="radio" name="display_comments" id="option2" value="0" autocomplete="off"> 非表示
+        <input type="radio" name="display_comments" id="option2" value="0" autocomplete="off" @if($review->display_comments === 0) checked @endif> コメント非表示
       </label>
     </div>
     </form>
