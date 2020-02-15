@@ -14,7 +14,7 @@
                  {{ $review->category->name }}
                 </div>
                 @if(!empty($review->image))
-                <div class='image-wrapper'><img class='book-image' src="{{ asset('storage/images/'.$review->image) }}"></div>
+                <div class='image-wrapper'><img class='book-image' src="{{ $review->image }}"></div>
                 @else
                 <div class='image-wrapper'><img class='book-image' src="{{ asset('images/dummy.png') }}"></div>
                 @endif

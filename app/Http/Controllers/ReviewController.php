@@ -7,6 +7,8 @@ use App\Review;
 use App\Category;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ReviewController extends Controller
 {
@@ -32,14 +34,13 @@ class ReviewController extends Controller
 
         // 画像添付有
         if ($request->hasFile('image')) {
-            $request->file('image')->store('/public/images');
+            $file_path = Storage::disk('s3')->putFile('images', $request->file('image'), 'public');
             $data = [
                 'user_id' => \Auth::id(), 
                 'title' => $r['title'], 
                 'category_id' => $r['category_id'],
                 'body' => $r['body'], 
-                // 保存する画像名をハッシュで変換
-                'image' => $request->file('image')->hashName()
+                'image' => Storage::disk('s3')->url($file_path)
             ];
         }
         // 画像添付無
