@@ -64,7 +64,20 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    メールアドレスで登録
+                                </button>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                            <p>or</p>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit">
+                                    <img class='book-image' src="{{ asset('images/btn_login_base.png') }}">
                                 </button>
                             </div>
                         </div>

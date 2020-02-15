@@ -13,6 +13,11 @@
 // ログイン認証
 Auth::routes();
 
+// プロバイダー認証APIにリダイレクト
+Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
+// 認証APIからのコールバック後の処理
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 // 初期画面
 Route::get('/', 'ReviewController@index')->name('index');
 
