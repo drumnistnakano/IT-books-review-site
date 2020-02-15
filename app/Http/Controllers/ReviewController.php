@@ -89,11 +89,17 @@ class ReviewController extends Controller
             'body' => 'required',
             'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        
+
         $review = Review::findOrFail($id);
         $review->category_id = $request->category_id;
         $review->title = $request->title;
         $review->body = $request->body;
+        // ファイルが存在する場合にS3に保存
+        if ($request->hasFile('image')) {
+            $file_path = Storage::disk('s3')->putFile('images', $request->file('image'), 'public');
+            $review->image = Storage::disk('s3')->url($file_path);
+        }
+
         $review->save();
         
         return redirect()

@@ -40,7 +40,6 @@
             <div class="form-group">
               <label for="file1">本のサムネイル</label>
               <input type="file" id="file1" name='image' class="form-control-file">
-              <input type="hidden" name="img" value={{$review->image}}>
             </div>
             <input type='submit' class='btn btn-primary' value='更新'>
           </div>
