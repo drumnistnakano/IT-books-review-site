@@ -58,6 +58,9 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+            //MySQLのTimeZoneはUTC、LaravelのはJSTのため、+09:00の補正を入れる
+            //ReadはJST、WriteはUTC
+            'timezone' => '+09:00',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
