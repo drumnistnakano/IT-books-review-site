@@ -21,15 +21,14 @@ https://it-books-review-site.work/
 ![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
 
 # 機能一覧
-* ユーザー登録、ログイン
+* ユーザー登録、ログイン認証
 * 画像アップロード
 * 登録されているレビュー一覧の表示
 * 一覧表示のページネーション
-
-（TODO）
-* いいね
+* いいね機能
 * コメント投稿
+
+（TODO)
 * コメントオフ
 * Line OAuthログイン
 * コメントのLine通知
-
