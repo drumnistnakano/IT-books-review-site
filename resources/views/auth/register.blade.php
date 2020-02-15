@@ -69,12 +69,15 @@
                                 </button>
                             </div>
                         </div>
-                        <br/>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <p>or</p>
-                            </div>
+                    </form>
+                    <br/>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <p>or</p>
                         </div>
+                    </div>
+                    <form method="GET" action="{{ route('oauth',  ['provider' => 'line' ]) }}">
+                        @csrf
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="provider-button">

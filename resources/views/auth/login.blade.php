@@ -5,6 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                @if (session('oauth_error'))
+                    {{ session('oauth_error') }}
+                @endif
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -62,6 +65,22 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+                    </form>
+                    <br/>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <p>or</p>
+                        </div>
+                    </div>
+                    <form method="GET" action="{{ route('oauth',  ['provider' => 'line' ]) }}">
+                        @csrf
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="provider-button">
+                                    <img class='book-image' src="{{ asset('images/btn_login_base.png') }}">
+                                </button>
                             </div>
                         </div>
                     </form>

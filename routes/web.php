@@ -14,7 +14,7 @@
 Auth::routes();
 
 // プロバイダー認証APIにリダイレクト
-Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->name('oauth');
 // 認証APIからのコールバック後の処理
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
