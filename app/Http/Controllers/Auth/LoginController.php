@@ -56,7 +56,8 @@ class LoginController extends Controller
             Auth::login(User::firstOrCreate([
                 'email' => $email
             ], [
-                'name' => $providerUser->getName()
+                'name' => $providerUser->getName(),
+                'provider_user_id' => $providerUser->getId()
             ]));
 
             return redirect($this->redirectTo);
