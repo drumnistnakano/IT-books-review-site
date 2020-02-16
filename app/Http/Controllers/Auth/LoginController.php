@@ -49,7 +49,7 @@ class LoginController extends Controller
         try {
             $providerUser = \Socialite::with($provider)->user();
         } catch(\Exception $e) {
-            return redirect('/login')->with('oauth_error', '予期せぬエラーが発生しました');
+            return redirect('/login')->with('message', '予期せぬエラーが発生しました');
         }
 
         if ($email = $providerUser->getEmail()) {
@@ -60,9 +60,9 @@ class LoginController extends Controller
                 'provider_user_id' => $providerUser->getId()
             ]));
 
-            return redirect($this->redirectTo);
+            return redirect($this->redirectTo)->with('message', 'ログインしました');
         } else {
-            return redirect('/login')->with('oauth_error', 'メールアドレスが取得できませんでした');
+            return redirect('/login')->with('message', 'メールアドレスが取得できませんでした');
         }
     }
 
