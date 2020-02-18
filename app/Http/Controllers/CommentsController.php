@@ -19,6 +19,9 @@ class CommentsController extends Controller
         $review = Review::findOrFail($params['review_id']);
         $review->comments()->create($params);
 
+        if($review->user->provider_user_id)
+            $this->notifyLine($review->user->provider_user_id, $request->body);
+
         return redirect()
              ->action('ReviewController@show', $review->id);
     }
@@ -30,5 +33,13 @@ class CommentsController extends Controller
 
         return redirect()
              ->action('ReviewController@show', $review->id);
+    }
+
+    // Line Push APIで通知
+    private function notifyLine($id, $text){
+        $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env('LINE_ACCESS_TOKEN'));
+        $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+        $response = $bot->pushMessage($id, $textMessageBuilder);
     }
 }
