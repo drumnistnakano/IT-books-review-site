@@ -1,6 +1,6 @@
 # IT技術書レビューサイト
 IT関連技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。  
-また、Lineによるログインを行うと、あなたが投稿したレビューへコメントがあった際に通知されます。  
+また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に通知されます。  
 
 ![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
 
@@ -17,6 +17,7 @@ https://it-books-review-site.work/
 * Bootstrap 4
 * Github
 * AWS(VPC,EC2,ELB,RDS,S3,Route53,ACM,Cloud9)
+* LINEログイン、LINE Messaging API
 
 # AWS構成図
 ![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
