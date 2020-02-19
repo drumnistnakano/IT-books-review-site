@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -26,6 +29,42 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
+     /**
+     * OAuth認証先にリダイレクト
+     *
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::with($provider)->redirect();
+    }
+
+     /**
+     * OAuth認証の結果受け取り
+     *
+     */
+    public function handleProviderCallback($provider)
+    {
+
+        try {
+            $providerUser = \Socialite::with($provider)->user();
+        } catch(\Exception $e) {
+            return redirect('/login')->with('message', '予期せぬエラーが発生しました');
+        }
+
+        if ($email = $providerUser->getEmail()) {
+            Auth::login(User::firstOrCreate([
+                'email' => $email
+            ], [
+                'name' => $providerUser->getName(),
+                'provider_user_id' => $providerUser->getId()
+            ]));
+
+            return redirect($this->redirectTo)->with('message', 'ログインしました');
+        } else {
+            return redirect('/login')->with('message', 'メールアドレスが取得できませんでした');
+        }
+    }
 
     /**
      * Create a new controller instance.

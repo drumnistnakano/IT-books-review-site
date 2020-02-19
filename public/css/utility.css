@@ -167,3 +167,15 @@
     padding-right: 5% !important;
     padding-left: 5% !important;
 }
+
+.provider-button {
+    width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}

@@ -64,7 +64,24 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+                                    <i class="far fa-envelope"></i>
                                     {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <br/>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <p>or</p>
+                        </div>
+                    </div>
+                    <form method="GET" action="{{ route('oauth',  ['provider' => 'line' ]) }}">
+                        @csrf
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="provider-button">
+                                    <img class='book-image' src="{{ asset('images/btn_login_base.png') }}">
                                 </button>
                             </div>
                         </div>
