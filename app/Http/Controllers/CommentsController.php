@@ -19,8 +19,12 @@ class CommentsController extends Controller
         $review = Review::findOrFail($params['review_id']);
         $review->comments()->create($params);
 
-        if($review->user->provider_user_id)
+        // コメント本文、レビュー詳細ページのURLをLineで通知
+        if($review->user->provider_user_id){
+            $this->notifyLine($review->user->provider_user_id, "あなたのレビューにコメントが投稿されました");
             $this->notifyLine($review->user->provider_user_id, $request->body);
+            $this->notifyLine($review->user->provider_user_id, url('show'.'/'.$request->review_id));
+        }
 
         return redirect()
              ->action('ReviewController@show', $review->id);
@@ -39,6 +43,7 @@ class CommentsController extends Controller
     private function notifyLine($id, $text){
         $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(env('LINE_ACCESS_TOKEN'));
         $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => env('LINE_CHANNEL_SECRET')]);
+
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
         $response = $bot->pushMessage($id, $textMessageBuilder);
     }
