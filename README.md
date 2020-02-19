@@ -1,5 +1,6 @@
 # IT技術書レビューサイト
 あなたが読んだIT関連技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。
+また、Lineによるログインを行うと、あたなたのレビューへコメントがあった際に通知されます。
 
 ![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
 
@@ -29,8 +30,5 @@ https://it-books-review-site.work/
 * いいね機能
 * コメント投稿
 * コメントオフ機能
-
-（TODO）
 * Line OAuth認証
 * コメントのLine通知
-
