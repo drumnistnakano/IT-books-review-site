@@ -14,11 +14,11 @@ class HomeControllerTest extends TestCase
     use DatabaseTransactions;
     
     /**
-     * A basic feature test example.
+     * Login Test
      *
      * @return void
      */
-    public function testExample()
+    public function testLogin()
     {
         // ログイン認証なし
         $response = $this->get('/');
