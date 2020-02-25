@@ -54,7 +54,7 @@ class ReviewController extends Controller
         }
         
         Review::insert($data);
-        return redirect('/')->with('message', '投稿しました');
+        return redirect()->route('index')->with('message', '投稿しました');
     }
     
     public function show($id)

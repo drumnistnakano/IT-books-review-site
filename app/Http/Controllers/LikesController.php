@@ -8,7 +8,6 @@ use Auth;
 use App\Review;
 use App\Like;
 
-
 class LikesController extends Controller
 {
     public function apply(Request $request, $reviewId)
