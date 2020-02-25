@@ -9,7 +9,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions; 
 use App\User;
 
-class HomeControllerTest extends TestCase
+class LoginTest extends TestCase
 {
     use DatabaseTransactions;
     
