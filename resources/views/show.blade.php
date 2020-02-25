@@ -25,7 +25,7 @@
         <h2 class='h4'>タイトル</h2>
         <p class='h5 mb20'>{{ $review->title }}</p>
         <h2 class='h4'>レビュー内容</h2>
-        <p>{{ $review->body }}</p>
+        <p>{!! nl2br(e($review->body)) !!}</p>
       </section>  
       <aside class='review-image'>
           @if(!empty($review->image))
