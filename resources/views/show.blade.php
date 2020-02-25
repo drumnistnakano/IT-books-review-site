@@ -140,18 +140,6 @@
     @endif
   </div>
 </div>
-
 @endsection
 
-<!-- TODO : jsファイルに切り出し -->
-<script type="text/javascript" language="javascript">
-  window.onload = function() {
-    var btn = document.getElementsByName('display_comments');
-    btn.forEach(function(e) {
-        e.addEventListener("click", function() {
-            document.display.submit();
-        });
-    });
-  };
-
-</script>
+<script src="{{ asset('/js/show.js') }}"></script>
