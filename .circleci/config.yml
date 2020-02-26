@@ -2,55 +2,55 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/php:7.3-node-browsers
-      - image: circleci/mysql:5.7
+      - image: circleci/php:7.3-stretch-node-browsers
+      - image: circleci/mysql:8.0.17
+        command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: $APP_KEY
-      - DB_CONNECTION: circle_test
-      - MYSQL_ALLOW_EMPTY_PASSWORD: true
-    working_directory: ~/ci-demo
+      - APP_KEY: base64:YlIJx6uH3OUb3hxN+PAiJKlC+EGZ2KYi8VHxsfdJpLk=
+      - DB_CONNECTION: circleci
+
+    working_directory: ~/repo
+
     steps:
       - checkout
+
       - run:
           name: install dockerize
           command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
           environment:
             DOCKERIZE_VERSION: v0.6.1
+
       - run:
-          name: Update apt-get
-          command: sudo apt-get update
-      - run:
-          name: Docker php extensions install
+          name: Install PHP Extensions
           command: sudo docker-php-ext-install pdo_mysql
-      - run:
-          name: Install GD required dependencies
-          command: sudo apt install -y libpng-dev
-      - run:
-          name: Install missing PHP Extensions
-          command: |
-              set +o pipefail
-              composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \
-                  xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
-              set -o pipefail
+
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-{{ checksum "laravel/composer.json" }}
             - v1-dependencies-
+
       - run:
-          name: Install PHP libraries
+          name: composer install
+          working_directory: laravel
           command: composer install -n --prefer-dist
+
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+          key: v1-dependencies-{{ checksum "laravel/composer.json" }}
+
       - run:
           name: Wait for db
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
-      # run seeding
-      - run: php artisan migrate
-      - run: php artisan db:seed
+
       - run:
-          name: Run PHPUnit
-          command: vendor/bin/phpunit
+          name: Migration & Seeding
+          working_directory: laravel
+          command: php artisan migrate --seed
+          
+      - run:
+          name: Unittest
+          working_directory: laravel
+          command: ./vendor/bin/phpun
