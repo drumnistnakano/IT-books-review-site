@@ -1,15 +1,20 @@
-[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)
-
-# IT技術書レビューサイト
-IT関連技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。  
-また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に通知されます。  
+# IT技術書レビューサイト　[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)  
+技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。    
+また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に即時通知されます。   
+どうしてもコメントされたくないという方は、コメント非表示ボタンでコメントできないように設定できます。  
 
 ![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
 
 # リンク
 https://it-books-review-site.work/
 
-ユーザ登録すると、だれでも技術書の紹介やレビューを投稿できます。  
+注意：  
+メールアドレス登録、またはLineログインでユーザ登録してください。  
+どうしても、登録したくない方は下記アカウントでログインしてください。  
+
+(テストアカウント）  
+メールアドレス：nakano@nakano  
+パスワード：nakanosan  
 
 # 使用技術
 * PHP 7.3
@@ -18,11 +23,12 @@ https://it-books-review-site.work/
 * MySQL 5.7
 * Bootstrap 4
 * Github
-* AWS(VPC,EC2,ELB,RDS,S3,Route53,ACM,Cloud9)
-* LINEログイン、LINE Messaging API
+* AWS(VPC,EC2,ELB,RDS,S3,Route53,Lambda,CloudWatchEvent,ACM,CloudFront,Cloud9)
+* CircleCI 2.0
 
-# AWS構成図
-![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
+# AWSアーキテクチャ
+![AWSアーキテクチャ](https://user-images.githubusercontent.com/30113636/75353340-95636000-58ee-11ea-8d38-50940898879a.png)
+
 
 # 機能一覧
 * ユーザー登録
@@ -35,3 +41,7 @@ https://it-books-review-site.work/
 * コメントオフ機能
 * Line OAuth認証
 * コメントのLine通知
+
+# ER図
+<img width="899" alt="スクリーンショット 2020-02-26 23 52 48" src="https://user-images.githubusercontent.com/30113636/75356397-40761880-58f3-11ea-9e72-2920b921836d.png">
+
