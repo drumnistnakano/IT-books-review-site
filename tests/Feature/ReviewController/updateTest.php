@@ -65,7 +65,7 @@ class ReviewUpdateTest extends TestCase
         $this->get('/show/'.$review_id)
             ->assertSee('レビュー詳細')
             ->assertSee($this->updateAttributes['title'])
-            ->assertSee($this->attributes['body']);
+            ->assertSee($this->updateAttributes['body']);
         // 詳細画面の文言は更新後データになっているか
         $this->get('/show/'.$review_id)
             ->assertSee('レビュー詳細')
