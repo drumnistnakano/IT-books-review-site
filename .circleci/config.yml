@@ -58,4 +58,4 @@ jobs:
           
       - run:
           name: Unittest
-          command: ./vendor/bin/phpun
+          command: ./vendor/bin/phpuni
