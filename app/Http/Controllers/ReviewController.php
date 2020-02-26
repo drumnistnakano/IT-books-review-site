@@ -22,10 +22,8 @@ class ReviewController extends Controller
         return view('review', compact('category'));
     }
     
-    // TODO : バリデーションの切り出し
     public function save(Request $request){
         $r = $request->all();
-        // バリデーション
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
@@ -80,10 +78,8 @@ class ReviewController extends Controller
         $select_category = Category::where('id', $review->category_id)->first();
         return view('edit', compact('review', 'category', 'select_category'));
     }
-    
-    // TODO : バリデーションの切り出し
+
     public function update(Request $request, $id){
-        // バリデーション
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
