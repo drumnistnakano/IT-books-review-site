@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Migration & Seeding
           command: php artisan migrate --seed
-  test
+  test:
     steps:
       - run:
           name: PHPUnit
