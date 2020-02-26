@@ -19,7 +19,7 @@
             <div class="card-body">
               <div class="form-group">
                 <label>本のタイトル</label>
-                <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
+                <input type='text' class='form-control' name='title' value = "{{ old('title') }}" placeholder='タイトルを入力'>
               </div>
               <div class="form-group">
                 <select name="category_id">
@@ -32,7 +32,7 @@
               </div>
               <div class="form-group">
               <label>レビュー本文</label>
-                <textarea class='description form-control' name='body' placeholder='本文を入力'></textarea>
+                <textarea class='description form-control' name='body' placeholder='本文を入力'>{{ old('body') }}</textarea>
               </div>
               <div class="form-group">
                 <label for="file1">本のサムネイル</label>
