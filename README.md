@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)
+
 # IT技術書レビューサイト
 IT関連技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。  
 また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に通知されます。  
