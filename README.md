@@ -1,6 +1,4 @@
-[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)
-
-# IT技術書レビューサイト
+# IT技術書レビューサイト　[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)  
 IT関連技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。  
 また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に通知されます。  
 
@@ -18,8 +16,8 @@ https://it-books-review-site.work/
 * MySQL 5.7
 * Bootstrap 4
 * Github
-* AWS(VPC,EC2,ELB,RDS,S3,Route53,ACM,Cloud9)
-* LINEログイン、LINE Messaging API
+* AWS(VPC,EC2,ELB,RDS,S3,Route53,Lambda,CloudWatchEvent,ACM,CloudFront,Cloud9)
+* CircleCI 2.0
 
 # AWS構成図
 ![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
