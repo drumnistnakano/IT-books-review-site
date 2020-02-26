@@ -56,6 +56,11 @@ jobs:
           name: Migration & Seeding
           command: php artisan migrate --seed
   test:
+    docker:
+      - image: circleci/php:7.3-stretch-node-browsers
+      - image: circleci/mysql:8.0.17
+        command: mysqld --default-authentication-plugin=mysql_native_password
+    working_directory: ~/repo
     steps:
       - run:
           name: PHPUnit
