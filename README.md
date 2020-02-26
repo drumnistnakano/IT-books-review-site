@@ -19,8 +19,9 @@ https://it-books-review-site.work/
 * AWS(VPC,EC2,ELB,RDS,S3,Route53,Lambda,CloudWatchEvent,ACM,CloudFront,Cloud9)
 * CircleCI 2.0
 
-# AWS構成図
-![Untitled Diagram](https://user-images.githubusercontent.com/30113636/73723968-a1378880-476d-11ea-9ddb-7f6a8090ee72.png)
+# AWSアーキテクチャ
+![AWSアーキテクチャ](https://user-images.githubusercontent.com/30113636/75353340-95636000-58ee-11ea-8d38-50940898879a.png)
+
 
 # 機能一覧
 * ユーザー登録
