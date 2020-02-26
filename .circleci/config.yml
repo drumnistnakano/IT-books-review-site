@@ -15,6 +15,16 @@ jobs:
       - run:
           name: Docker php extensions install
           command: sudo docker-php-ext-install pdo_mysql
+      - run:
+          name: Install GD required dependencies
+          command: sudo apt install -y libpng-dev
+      - run:
+          name: Install missing PHP Extensions
+          command: |
+              set +o pipefail
+              composer check-platform-reqs --no-ansi | grep missing | awk '{print $1}' | sed 's|^ext-||' | \
+                  xargs -I@ sh -c 'sudo -E docker-php-ext-install @'
+              set -o pipefail
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "composer.json" }}
