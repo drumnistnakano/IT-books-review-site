@@ -57,7 +57,7 @@ jobs:
           command: php artisan migrate --seed
       
       - persist_to_workspace:
-          root: .
+          root: ~/repo
           paths:
             - .
   test:
@@ -68,7 +68,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: .
+          at: ~/repo
 
       - run:
           name: PHPUnit
