@@ -4,7 +4,7 @@
 また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に即時通知されます。   
 どうしてもコメントされたくないという方は、コメント非表示ボタンでコメントできないように設定できます。  
 
-![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
+![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/demo.gif)  
 
 # リンク
 https://it-books-review-site.work/
