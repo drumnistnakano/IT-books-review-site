@@ -1,4 +1,5 @@
-# IT技術書レビューサイト　[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=svg)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)  
+[![CircleCI](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master.svg?style=shield)](https://circleci.com/gh/drumnistnakano/IT-books-review-site/tree/master)  [![Maintainability](https://api.codeclimate.com/v1/badges/c3490185b36e4ae85c24/maintainability)](https://codeclimate.com/github/drumnistnakano/IT-books-review-site/maintainability)
+# IT技術書レビューサイト　
 技術書のレビュー投稿や閲覧、読んだ後にいいねができるサイトです。    
 また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に即時通知されます。   
 どうしてもコメントされたくないという方は、コメント非表示ボタンでコメントできないように設定できます。  
