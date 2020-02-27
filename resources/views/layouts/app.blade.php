@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="icon" href="{{ asset('/favicon.ico') }}">
     @include('layouts.head')
 </head>
 <body>

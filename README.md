@@ -4,7 +4,7 @@
 また、LINEによるログインを行うと、あなたが投稿したレビューへコメントがあった際に即時通知されます。   
 どうしてもコメントされたくないという方は、コメント非表示ボタンでコメントできないように設定できます。  
 
-![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/tutorial.gif)
+![Gif](https://raw.github.com/wiki/drumnistnakano/IT-books-review-site/demo.gif)  
 
 # リンク
 https://it-books-review-site.work/
@@ -46,3 +46,18 @@ https://it-books-review-site.work/
 # ER図
 <img width="899" alt="スクリーンショット 2020-02-26 23 52 48" src="https://user-images.githubusercontent.com/30113636/75356397-40761880-58f3-11ea-9e72-2920b921836d.png">
 
+# システム自動起動&自動停止
+CloudWatch EventとLambdaを使って、システムの起動と停止を自動的に行うようにした。  
+起動停止のソースコードは以下を参照。  
+
+[EC2起動停止](https://github.com/drumnistnakano/start-stop-EC2)  
+[RDS起動停止](https://github.com/drumnistnakano/start-stop-RDS)  
+
+なお、メンテナンス時間になるとS3にホスティングしたメンテナンスページに自動で切り替わるように  
+Route53のフェイルオーバー機能を利用した。  
+- システム利用可能時間  
+8:00〜23:00 (EC2, RDS起動)  
+- メンテナンス時間  
+23:00〜8:00 (EC2, RDS停止)  
+
+![image](https://user-images.githubusercontent.com/30113636/75447217-47149680-59ac-11ea-8687-f2f73224f727.png)
