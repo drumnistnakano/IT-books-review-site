@@ -46,3 +46,9 @@ https://it-books-review-site.work/
 # ER図
 <img width="899" alt="スクリーンショット 2020-02-26 23 52 48" src="https://user-images.githubusercontent.com/30113636/75356397-40761880-58f3-11ea-9e72-2920b921836d.png">
 
+# システム自動起動&自動停止
+CloudWatch EventとLambdaを使って、システムの起動と停止を自動的に行うようにした。  
+起動停止のソースコードは以下を参照。  
+
+[EC2起動停止](https://github.com/drumnistnakano/start-stop-EC2)  
+[RDS起動停止](https://github.com/drumnistnakano/start-stop-RDS)  
