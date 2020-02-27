@@ -40,7 +40,7 @@ class ReviewCreateTest extends TestCase
     public function testNormalCreate()
     {
         // レビュー投稿
-        $response = $this->post('/review/save', $this->attributes);
+        $response = $this->post('/review/store', $this->attributes);
 
         // リダイレクトされるか
         $response->assertStatus(302)->assertRedirect('/');
