@@ -63,10 +63,10 @@
     <div class="form-inline">
     @if(Auth::user()->id == $review->user_id)
       <div class="form-group">
-        {{ Form::open(['url' => route('edit', [$review->id]), 'method'=>'GET']) }}
+        {{ Form::open(['url' => route('review.edit', [$review->id]), 'method'=>'GET']) }}
         {{ Form::submit('編集',['class' => 'btn btn-success mb20']) }}
         {{ Form::close() }}
-        {{ Form::open(['url' => route('remove', [$review->id]), 'method'=>'POST']) }}
+        {{ Form::open(['url' => route('review.remove', [$review->id]), 'method'=>'POST']) }}
         {{ Form::submit('削除',['class' => 'btn btn-danger mb20']) }}
         {{ Form::close() }}
       </div>
@@ -93,7 +93,7 @@
     @if($review->display_comments === 1)
 
     <!-- コメント投稿 -->
-    <form class="mb-4" method="POST" action="{{ route('comments.store') }}">
+    <form class="mb-4" method="POST" action="{{ route('comment.store') }}">
       @csrf
       <input name="review_id" type="hidden" value="{{ $review->id }}">
       <input name="user_id" type="hidden" value="{{ $loginuser->id }}">

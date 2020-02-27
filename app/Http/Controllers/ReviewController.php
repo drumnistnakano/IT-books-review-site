@@ -22,7 +22,7 @@ class ReviewController extends Controller
         return view('review', compact('category'));
     }
     
-    public function save(Request $request){
+    public function store(Request $request){
         $r = $request->all();
         $validatedData = $request->validate([
             'title' => 'required|max:255',

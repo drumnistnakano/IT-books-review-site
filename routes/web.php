@@ -27,18 +27,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 // ログイン後
 Route::group(['middleware' => 'auth'], function () {
     // 投稿機能
-    Route::get('/review', 'ReviewController@create')->name('create');
-    Route::post('/review/save', 'ReviewController@save')->name('save');
+    Route::get('/review', 'ReviewController@create')->name('review.create');
+    Route::post('/review/store', 'ReviewController@store')->name('review.store');
     // 削除機能
-    Route::post('/review/remove/{id}', 'ReviewController@remove')->name('remove');
+    Route::post('/review/remove/{id}', 'ReviewController@remove')->name('review.remove');
     // 更新機能
-    Route::get('/review/edit/{id}', 'ReviewController@edit')->name('edit');
-    Route::post('/review/edit/{id}', 'ReviewController@update')->name('update');
+    Route::get('/review/edit/{id}', 'ReviewController@edit')->name('review.edit');
+    Route::post('/review/edit/{id}', 'ReviewController@update')->name('review.update');
     // いいね機能
     Route::post('/show/{review}/likes/{like}', 'LikesController@clear');
     Route::post('/show/{review}/likes', 'LikesController@apply');
     // コメント投稿
-    Route::post('/comment', 'CommentsController@store')->name('comments.store');
+    Route::post('/comment', 'CommentsController@store')->name('comment.store');
     Route::post('/comment/{id}/flag', 'CommentsController@canComment');
     // 詳細画面
     Route::get('/show/{id}', 'ReviewController@show')->name('show');
