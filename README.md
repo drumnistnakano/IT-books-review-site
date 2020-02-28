@@ -43,6 +43,10 @@ https://it-books-review-site.work/
 * Line OAuth認証
 * コメントのLine通知
 
+TODO
+* 検索機能
+* メール再設定
+
 # ER図
 <img width="899" alt="スクリーンショット 2020-02-26 23 52 48" src="https://user-images.githubusercontent.com/30113636/75356397-40761880-58f3-11ea-9e72-2920b921836d.png">
 
